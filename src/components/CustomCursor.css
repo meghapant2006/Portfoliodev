@@ -1,0 +1,90 @@
+/* ---- Custom Cursor ---- */
+.custom-cursor,
+.custom-cursor-ring {
+  position: fixed;
+  top: 0;
+  left: 0;
+  pointer-events: none;
+  z-index: var(--z-cursor);
+  border-radius: 50%;
+  opacity: 0;
+  transition: opacity 0.3s ease, width 0.35s var(--ease-out-expo),
+    height 0.35s var(--ease-out-expo), background-color 0.3s ease;
+  will-change: transform;
+}
+
+.custom-cursor {
+  width: 8px;
+  height: 8px;
+  background-color: var(--accent);
+  margin-left: -4px;
+  margin-top: -4px;
+}
+
+.custom-cursor-ring {
+  width: 36px;
+  height: 36px;
+  border: 1.5px solid rgba(var(--accent-rgb), 0.5);
+  margin-left: -18px;
+  margin-top: -18px;
+  transition: opacity 0.3s ease, width 0.45s var(--ease-out-expo),
+    height 0.45s var(--ease-out-expo), border-color 0.3s ease,
+    margin 0.45s var(--ease-out-expo);
+}
+
+/* Visible */
+.custom-cursor--visible {
+  opacity: 1;
+}
+
+.custom-cursor-ring--visible {
+  opacity: 1;
+}
+
+/* Hover state */
+.custom-cursor--hover {
+  width: 12px;
+  height: 12px;
+  margin-left: -6px;
+  margin-top: -6px;
+  background-color: var(--white);
+  mix-blend-mode: difference;
+}
+
+.custom-cursor-ring--hover {
+  width: 56px;
+  height: 56px;
+  margin-left: -28px;
+  margin-top: -28px;
+  border-color: rgba(var(--accent-rgb), 0.3);
+}
+
+/* Hide default cursor globally */
+@media (pointer: fine) {
+  * {
+    cursor: none !important;
+  }
+}
+
+/* Don't hide on touch/coarse pointer devices */
+@media (pointer: coarse) {
+  .custom-cursor,
+  .custom-cursor-ring {
+    display: none !important;
+  }
+
+  * {
+    cursor: auto !important;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .custom-cursor,
+  .custom-cursor-ring {
+    display: none !important;
+  }
+
+  * {
+    cursor: auto !important;
+  }
+}

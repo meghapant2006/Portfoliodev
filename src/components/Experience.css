@@ -1,0 +1,122 @@
+/* ---- Experience Section ---- */
+.experience {
+  background: var(--primary);
+}
+
+.experience__card {
+  display: flex;
+  gap: 2.5rem;
+  margin-top: var(--space-3xl);
+  position: relative;
+}
+
+.experience__timeline {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  flex-shrink: 0;
+  padding-top: 0.5rem;
+}
+
+.experience__timeline-dot {
+  width: 14px;
+  height: 14px;
+  border-radius: 50%;
+  background: var(--accent);
+  border: 3px solid var(--primary);
+  box-shadow: 0 0 0 2px var(--accent);
+  flex-shrink: 0;
+  z-index: 1;
+}
+
+.experience__timeline-line {
+  width: 2px;
+  flex: 1;
+  background: linear-gradient(
+    180deg,
+    transparent 0%,
+    rgba(var(--accent-rgb), 0.3) 20%,
+    rgba(var(--accent-rgb), 0.3) 80%,
+    transparent 100%
+  );
+  position: absolute;
+  top: 1.5rem;
+  bottom: 0;
+  left: 6px;
+}
+
+.experience__content {
+  flex: 1;
+  padding-bottom: 1rem;
+}
+
+.experience__header {
+  margin-bottom: 2rem;
+}
+
+.experience__role {
+  font-family: var(--font-display);
+  font-size: var(--text-2xl);
+  font-weight: 600;
+  color: var(--white);
+  margin-bottom: 0.75rem;
+}
+
+.experience__meta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1.25rem;
+}
+
+.experience__meta-item {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  font-size: var(--text-sm);
+  color: rgba(var(--white-rgb), 0.5);
+  font-weight: 400;
+}
+
+.experience__meta-item--accent {
+  color: var(--accent);
+  font-weight: 500;
+}
+
+.experience__points {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.experience__point {
+  display: flex;
+  align-items: flex-start;
+  gap: 1rem;
+  font-size: var(--text-base);
+  color: rgba(var(--white-rgb), 0.75);
+  line-height: 1.7;
+}
+
+.experience__point-bullet {
+  width: 6px;
+  height: 6px;
+  background: var(--accent);
+  border-radius: 50%;
+  flex-shrink: 0;
+  margin-top: 0.6rem;
+}
+
+/* ---- Responsive ---- */
+@media (max-width: 768px) {
+  .experience__card {
+    gap: 1.5rem;
+  }
+
+  .experience__timeline {
+    display: none;
+  }
+
+  .experience__meta {
+    gap: 0.75rem;
+  }
+}
